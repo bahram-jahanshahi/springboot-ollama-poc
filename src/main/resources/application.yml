@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: springboot-ollama-poc
+  ai:
+    model:
+      chat: ollama   # enables Ollama chat auto-config (on by default)
+    ollama:
+      base-url: http://localhost:11434
+      init:
+        pull-model-strategy: never # set to 'always' to auto-pull at startup
+      chat:
+        options:
+          model: llama3.1:8b
+          temperature: 0.1
+          # format: json           # (optional) for pure JSON text responses from the model
+server:
+  port: 8080
+
